@@ -1,13 +1,23 @@
-var express =  require('express');
-var app = express();
-app.listen(process.env.PORT||'8000');
-var expressHbs = require('express-handlebars');
-app.engine('handlebars',expressHbs.engine());
-app.set('view engine','handlebars');
+const express = require('express')
+const app = express()
+const port = 3000
 
-app.get('/',function(req,res){
-    res.send("Hello World");
+const expressHbs = require('express-handlebars');
+
+app.engine('.hbs', expressHbs.engine({
+    extname: "hbs",
+    defaultLayout: 'tho',
+    //layoutsDir: "views/layouts/",
+}));
+
+app.set('view engine', '.hbs');
+
+app.get('/tho', (req, res) => {
+    res.render('home', {
+        layout: 'tho',
+    })
 });
-app.get('/abc',function(req,res){
-    res.render('baitho/tho');
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
 });
