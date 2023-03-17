@@ -1,0 +1,26 @@
+
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <title>MÁY TÍNH</title>
+</head>
+<body>
+<div class="subscribe-container">
+  <form method="get" action="/maytinh">
+    <input step="0.1" type="number" name="so1" id="so1" placeholder="Số thứ nhất"  value={{so1}} required> 
+   <select name="dau" >
+
+     <option >{{dau}}</option>
+     <option value="+">+</option>
+     <option value="-">-</option>
+     <option value="x">*</option>
+     <option value="/">/</option>
+   </select>
+    <input step="0.1" type="number" name="so2" id="so2" placeholder="Số thứ 2"  value={{so2}} required>
+    <input class="subscribe-button" type="submit" value="Subscribe">
+   <h2>Kết quả là : {{kq}}</h2>
+  
+    </form>
+</div>
+</body>
+</html>
